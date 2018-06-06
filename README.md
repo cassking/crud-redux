@@ -10,7 +10,22 @@
 3. `createStore()` method creates a store, needs
 a special argument called `reducer`
 4. keep all reducers in a reducer dir.
-5.
+5. `actions` in redux are just OBJECTS with properties of `type` (mandatory) and others
+6. actions are `dispatched`, simply we call the dispatch method in the store object with an action (`store.dispatch(action)`)
+
+7. a reducer simply is a function that returns the new state for all your components
+
+8. we use a switch satement that is based on value of `action.type`. in this app
+'ADD_POST' returns NEW array containing `action.datapayload`. whenver the 'ADD_POST' event happens, push some data into the STATE ARRAY
+`action.datapayload` is just object with title and body of message
+
+9. wrap App in Provider to offer all children access to store. store is Provider prop
+
+
+
+
+
+
 
 
 
