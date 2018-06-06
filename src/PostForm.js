@@ -24,6 +24,13 @@ class PostForm extends Component {
       message
     }
     console.log(datapayload)
+    //with the connect below we can now pass dispatch as props
+    this.props.dispatch({
+      type: 'ADD_POST',
+      datapayload
+    });
+    this.getTitle.current.value = ''
+    this.getMessage.current.value = ''
   }
 
 render() {
@@ -55,5 +62,6 @@ render() {
 }
 
 }
+export default connect() (PostForm);
 
-export default PostForm;
+// export default PostForm;

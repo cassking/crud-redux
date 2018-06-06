@@ -18,9 +18,17 @@ a special argument called `reducer`
 8. we use a switch satement that is based on value of `action.type`. in this app
 'ADD_POST' returns NEW array containing `action.datapayload`. whenver the 'ADD_POST' event happens, push some data into the STATE ARRAY
 `action.datapayload` is just object with title and body of message
-
 9. wrap App in Provider to offer all children access to store. store is Provider prop
-10. as for `refs` I am using the new `React.createRef()` api , although using a callback is still an okay to go. API seems like a much easier way to go
+10. as for `refs` I am using the new `React.createRef()` api , although using a callback is still an okay to go. API seems like a much easier way to go ( cool article here https://medium.com/@leonardobrunolima/react-tips-using-refs-28fe353b1c2)
+11. dispatch and action using `connect`: (in a nutshell: so state lives inside the STORE object that has it's own methods for getting state of app, one method is DISPATCH - we dispatch when we need to pass an ACTION to REDUCER to tell it what to do with state)
+with `connect` we get access to this dispatch method as PROPS
+
+12. so....  `connect` returns a function - it takes the current component as argument and returns a NEW component with DISPATCH method as a PROP. syntax looks like:
+`export default connect()(component-name)`
+
+13. after connect in place, to get at state, we need to use a special function called `mapStateToProps` syntax: see how the STATE is the argument ---
+`const mapStateToProps = (state) => {`
+14.
 
 
 
