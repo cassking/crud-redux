@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Post from './Post';
 
 class AllPost extends Component {
   constructor() {
@@ -15,9 +16,18 @@ class AllPost extends Component {
     return(
       <div>
         <h1>All Your stuff here!</h1>
-        { console.log(this.props.posts)}
+        {/* check to see props being passed from connect */}
+        { console.log('this.props.posts', this.props.posts)}
+        { this.props.posts.map(post =>
+          React.createElement(Post,
+            { key: post.id, post: post }))
+          }
+            {/* same as
+            {this.props.posts.map((post) => <Post key={post.id} post={post} />)} */}
+
+
       </div>
-    )
+    );
   }
 }//end of class
 
