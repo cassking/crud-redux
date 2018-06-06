@@ -12,6 +12,6 @@ const store = createStore(postReducer);
 
 ReactDOM.render(
   <Provider store={store} >
-  <App />, document.getElementById('root')
-</Provider>
+  <App />
+</Provider>, document.getElementById('root')//move this outside of provder
 )

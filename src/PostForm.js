@@ -1,12 +1,29 @@
 import React, { Component } from 'react';
 
 class PostForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    //new react api for refs
+    this.getTitle = React.createRef();
+    this.getMessage = React.createRef();
 
     this.state = {
 
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit = ( event ) => {
+    event.preventDefault()
+  //new way to call refs. wiht api... current.value
+    const title = this.getTitle.current.value
+    const message = this.getMessage.current.value
+    const datapayload = {
+      id: new Date(),//unique id to edit and delete
+      title,
+      message
+    }
+    console.log(datapayload)
   }
 
 render() {
@@ -14,11 +31,23 @@ render() {
     <div>
 
       <h1>add some content here:</h1>
-      <form>
-        <input required type="text" placeholder="enter a title here"/><br />
-        <textarea required rows="5" cols="28" placholder="enter some awesome schtuff here" /><br />
-        <button>Post that sucker!</button>
+      <form onSubmit={this.handleSubmit}>
+        <input required type="text"
+          ref={this.getTitle}
+          value={this.state.title}
+          //can still get refs with callback below
+          //optional
+          // ref={ (input) => this.getTitle = input }
+          placeholder="enter a title here"/>
+          <br />          <br />
 
+        <textarea required
+          ref={this.getMessage}
+          //can still get refs with callback below
+          //optional, i find the new api much easier
+          // ref={ (input) => this.getMessage = input}
+          rows="5" cols="28" placholder="enter some awesome schtuff here" /><br />
+        <button>Post that sucker!</button>
 
       </form>
     </div>

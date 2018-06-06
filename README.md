@@ -20,6 +20,7 @@ a special argument called `reducer`
 `action.datapayload` is just object with title and body of message
 
 9. wrap App in Provider to offer all children access to store. store is Provider prop
+10. as for `refs` I am using the new `React.createRef()` api , although using a callback is still an okay to go. API seems like a much easier way to go
 
 
 
