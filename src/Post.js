@@ -11,15 +11,17 @@ class Post extends Component {
   }
   render(){
     return(
-      <div>
-        <h2>
+      <div className="post">
+        <h2 className="post_title">
           {this.props.post.title}
         </h2>
-        <p>
+        <p className="post_message">
           {this.props.post.message}
         </p>
-        <button onClick={ ()=>this.props.dispatch({type: 'DELETE_POST',id: this.props.post.id}) }>Delete Me</button>
-      <button onClick={ ()=>this.props.dispatch({type: 'EDIT_POST', id: this.props.post.id})}>Edit Me</button>
+        <div className="control-buttons">
+          <button onClick={ ()=>this.props.dispatch({type: 'DELETE_POST',id: this.props.post.id}) }>Delete Me</button>
+          <button onClick={ ()=>this.props.dispatch({type: 'EDIT_POST', id: this.props.post.id})}>Edit Me</button>
+        </div>
       </div>
 
     )

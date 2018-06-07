@@ -17,7 +17,7 @@ class AllPost extends Component {
 
     return(
       <div>
-        <h1>All Your stuff here!</h1>
+        <h1 className="post_heading">All Your stuff here!</h1>
         {/* check to see props being passed from connect */}
         { console.log('this.props.posts', this.props.posts)}
             { this.props.posts.map((post) =>
