@@ -21,6 +21,7 @@ class PostForm extends Component {
     const title = this.getTitle.current.value
     const message = this.getMessage.current.value
     const datapayload = {
+      editing: false,
       id: new Date(),//unique id to edit and delete
       title,
       message

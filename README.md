@@ -28,7 +28,14 @@ with `connect` we get access to this dispatch method as PROPS
 
 13. after connect in place, to get at state, we need to use a special function called `mapStateToProps` syntax: see how the STATE is the argument ---
 `const mapStateToProps = (state) => {`
-14. to DELETE a content we need to add a new dispatch action `DELETE_POST`
+14. to DELETE a content we need to add a new dispatch action `DELETE_POST`. to use this use JS `filter ` function. it takes a function as an argument and returns a NEW array.
+basically, in the new array, it keeps ALL post.id NOT matching the action.id (post we delete)
+
+`return state.filter( (post) => post.id !== action.id)`
+
+15.
+
+
 
 
 
